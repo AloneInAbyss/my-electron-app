@@ -1,10 +1,6 @@
 # This will publish a new app release
 name: Electron Forge Publisher GitHub
 
-# Write permissions are required to create new releases.
-permissions:
-  contents: write
-
 # Controls when the workflow will run
 on:
   push:
@@ -16,6 +12,10 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
+
+    # Write permissions are required to create new releases.
+    permissions:
+      contents: write
 
     steps:
       - uses: actions/checkout@v4
